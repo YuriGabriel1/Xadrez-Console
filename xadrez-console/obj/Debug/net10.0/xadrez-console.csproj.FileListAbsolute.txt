@@ -1,0 +1,15 @@
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\bin\Debug\net10.0\xadrez-console.exe
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\bin\Debug\net10.0\xadrez-console.deps.json
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\bin\Debug\net10.0\xadrez-console.runtimeconfig.json
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\bin\Debug\net10.0\xadrez-console.dll
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\bin\Debug\net10.0\xadrez-console.pdb
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\obj\Debug\net10.0\xadrez-console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\obj\Debug\net10.0\xadrez-console.AssemblyInfoInputs.cache
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\obj\Debug\net10.0\xadrez-console.AssemblyInfo.cs
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\obj\Debug\net10.0\xadrez-console.csproj.CoreCompileInputs.cache
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\obj\Debug\net10.0\xadrez-console.sourcelink.json
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\obj\Debug\net10.0\xadrez-console.dll
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\obj\Debug\net10.0\refint\xadrez-console.dll
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\obj\Debug\net10.0\xadrez-console.pdb
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\obj\Debug\net10.0\xadrez-console.genruntimeconfig.cache
+C:\Users\yurit\OneDrive\Documentos\MeusProjetos\Xadrez-Console\xadrez-console\obj\Debug\net10.0\ref\xadrez-console.dll
