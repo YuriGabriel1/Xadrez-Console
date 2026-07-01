@@ -7,20 +7,9 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        try // vai testar se o código esta funcionando.
-        {
-            Tabuleiro tab = new Tabuleiro(8, 8);
-            tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
-            tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(2, 9));
-            tab.ColocarPeca(new Rei(tab, Cor.Preta), new Posicao(2, 4));
-
-            Tela.ImprimirTabuleiro(tab);
-
-        }
-        catch (TabuleiroException e)
-        {
-            Console.WriteLine( e.Message);
-        }
+       XadezPosicao pos = new XadezPosicao('a',1);
+       System.Console.WriteLine(pos);
+        Console.WriteLine(pos.Toposicao());
 
         Console.ReadLine();
     }
