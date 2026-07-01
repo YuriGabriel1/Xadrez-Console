@@ -12,4 +12,9 @@ public class Tabuleiro
        this.Colunas = Colunas;
        pecas = new Peca[Linhas, Colunas]; 
     }
+
+    public Peca peca(int Linhas, int Colunas)
+    {
+        return pecas[Linhas, Colunas];
+    }
 }
