@@ -15,10 +15,10 @@ public class Tela
                 }
                 else
                 {
-                    System.Console.WriteLine(tab.peca(i,j) + " ");
+                    System.Console.Write(tab.peca(i,j)+ " ");
                 }
             }
-            System.Console.WriteLine();
+            System.Console.WriteLine( );
         }
        
     }
