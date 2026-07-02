@@ -1,8 +1,42 @@
 namespace Xadez_Console;
+
 using Tabuleiro;
 using xadrez;
 public class Tela
 {
+
+    public static void imprimirPartida(PartidaDeXadrez partida)
+    {
+        ImprimirTabuleiro(partida.tab);
+        Console.WriteLine();
+        imprimirpecasCapturadas(partida);
+        Console.WriteLine();
+        Console.WriteLine("Turno: " + partida.turno);
+        Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+    }
+
+    public static void imprimirpecasCapturadas(PartidaDeXadrez partida)
+    {
+        Console.WriteLine("Peças capturadas:");
+        System.Console.Write("Brancas:");
+        imprimirConjuto(partida.pecasCapturadas(Cor.Branco));
+        System.Console.WriteLine();
+        System.Console.Write("Pretas:");
+        ConsoleColor aux = Console.ForegroundColor;
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        imprimirConjuto(partida.pecasCapturadas(Cor.Preta));
+        Console.ForegroundColor = aux;
+        System.Console.WriteLine();
+    }
+    public static void imprimirConjuto(HashSet<Peca> conjunto)
+    {
+        Console.Write("[");
+        foreach (Peca x in conjunto)
+        {
+            Console.Write(x + " ");
+        }
+        Console.Write("]");
+    }
     public static void ImprimirTabuleiro(Tabuleiro tab)
     {
         for (int i = 0; i < tab.Linhas; i++)
@@ -11,7 +45,7 @@ public class Tela
             for (int j = 0; j < tab.Colunas; j++)
             {
                 ImprimirPeca(tab.peca(i, j));
-                
+
 
             }
             System.Console.WriteLine();
@@ -19,8 +53,8 @@ public class Tela
         Console.WriteLine("  a b c d e f g h");
     }
 
-     public static void ImprimirTabuleiro(Tabuleiro tab, bool[,]posicoesPossiveis)
-    {   
+    public static void ImprimirTabuleiro(Tabuleiro tab, bool[,] posicoesPossiveis)
+    {
         ConsoleColor fundoOriginal = Console.BackgroundColor;
         ConsoleColor FundoAlterado = ConsoleColor.DarkGray;
 
@@ -31,11 +65,11 @@ public class Tela
             {
                 if (posicoesPossiveis[i, j])
                 {
-                    Console.BackgroundColor =  FundoAlterado;
+                    Console.BackgroundColor = FundoAlterado;
                 }
                 else
                 {
-                    
+
                     Console.BackgroundColor = fundoOriginal;
                 }
                 ImprimirPeca(tab.peca(i, j));
@@ -73,7 +107,7 @@ public class Tela
             else
             {
                 ConsoleColor aux = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.Write(peca);
                 Console.ForegroundColor = aux;
             }

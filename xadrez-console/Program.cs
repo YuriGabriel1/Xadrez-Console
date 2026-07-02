@@ -16,11 +16,8 @@ public class Program
                 try
                 {
                     Console.Clear();
-                    Tela.ImprimirTabuleiro(partida.tab);
-                    Console.WriteLine();
-                    Console.WriteLine("Turno: " + partida.turno);
-                    System.Console.WriteLine("Aguardando jogada:" + partida.jogadorAtual);
-
+                    Tela.imprimirPartida(partida);
+                    
                     Console.Write("Origem: ");
                     Posicao origem = Tela.LerPosicaoxadrez().Toposicao();
                     partida.validarPosicaoDeorigem(origem);
