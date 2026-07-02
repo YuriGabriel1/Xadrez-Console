@@ -10,6 +10,12 @@ public class Posicao
         this.Linha = Linha;
         this.Coluna = Coluna; //this aqui se refere a (autoreferência)
     }
+
+    public void definirValores(int Linha, int Coluna)
+    {
+        this.Linha = Linha;
+        this.Coluna = Coluna;
+    }
     public override string ToString() // retorna na tela o que eu coloquei 
     {
         return  + Linha
