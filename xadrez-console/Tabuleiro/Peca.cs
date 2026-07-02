@@ -13,4 +13,9 @@ public class Peca
         this.cor = cor;
         this.qtdMovimentos = 0;
     }
+
+    public void IncrementraQteMovimentos()
+    {
+        qtdMovimentos ++;
+    }
 }

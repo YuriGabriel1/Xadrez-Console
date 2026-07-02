@@ -2,15 +2,15 @@ namespace Tabuleiro;
 
 public class Tabuleiro
 {
-    public int Linhas{get;protected set;}
-    public int Colunas{get;set;}
-    private  Peca[,] pecas; // só ele pode modificar , mais  ninguém  pode modificar 
+    public int Linhas { get; protected set; }
+    public int Colunas { get; set; }
+    private Peca[,] pecas; // só ele pode modificar , mais  ninguém  pode modificar 
 
     public Tabuleiro(int Linhas, int Colunas)
     {
-       this.Linhas = Linhas;
-       this.Colunas = Colunas;
-       pecas = new Peca[Linhas, Colunas]; 
+        this.Linhas = Linhas;
+        this.Colunas = Colunas;
+        pecas = new Peca[Linhas, Colunas];
     }
 
     public Peca peca(int Linhas, int Colunas)
@@ -22,7 +22,8 @@ public class Tabuleiro
         return pecas[pos.Linha, pos.Coluna];
     }
     public bool ExistePeca(Posicao pos)
-    {   ValidarPosicao(pos);
+    {
+        ValidarPosicao(pos);
         return peca(pos) != null;
     }
 
@@ -35,15 +36,26 @@ public class Tabuleiro
         pecas[pos.Linha, pos.Coluna] = p;
         p.posicao = pos;
     }
-    public bool  PosicaoValida(Posicao pos)
+    public Peca RetirarPeca(Posicao pos)
     {
-        if(pos.Linha <0 || pos.Linha >=Linhas || pos.Coluna <0 || pos.Coluna >= Colunas)
+        if (peca(pos) == null)
+        {
+            return null;
+        }
+        Peca aux = peca(pos);
+        aux.posicao = null;
+        pecas[pos.Linha, pos.Coluna] = null; // Marca a posição dela como nula e do tabuleiro também aonde ela esta  no caso a peça
+        return aux;
+    }
+    public bool PosicaoValida(Posicao pos)
+    {
+        if (pos.Linha < 0 || pos.Linha >= Linhas || pos.Coluna < 0 || pos.Coluna >= Colunas)
         {
             return false;
         }
         return true;
     }
-    public void  ValidarPosicao(Posicao pos)
+    public void ValidarPosicao(Posicao pos)
     {
         if (!PosicaoValida(pos))
         {

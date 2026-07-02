@@ -9,14 +9,23 @@ public class Program
     {
         try // vai testar se o código esta funcionando.
         {   
-            XadezPosicao pos = new XadezPosicao('a',1);
-            Tabuleiro tab = new Tabuleiro(8, 8);
-            tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
-            tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(2, 3));
-            tab.ColocarPeca(new Rei(tab, Cor.Preta), new Posicao(2, 1));
-            tab.ColocarPeca(new Rei(tab, Cor.Preta), new Posicao(4, 5));
+            PartidaDeXadrez partida = new PartidaDeXadrez();
 
-            Tela.ImprimirTabuleiro(tab);
+           while (!partida.terminada)
+            {
+                Console.Clear();
+                Console.WriteLine();
+                Tela.ImprimirTabuleiro(partida.tab);
+                Console.WriteLine();
+                
+                Console.Write("Origem:");
+                Posicao origem = Tela.LerPosicaoxadrez().Toposicao();
+                Console.Write("Destino:");
+                Posicao destino = Tela.LerPosicaoxadrez().Toposicao();
+
+                partida.ExecutaMovimento(origem, destino);
+            }
+            
 
         }
         catch (TabuleiroException e)

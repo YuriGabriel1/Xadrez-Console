@@ -2,7 +2,7 @@ namespace Xadez_Console;
 
 using System.Security.Cryptography.X509Certificates;
 using Tabuleiro;
-
+using xadrez;
 public class Tela
 {
     public static void ImprimirTabuleiro(Tabuleiro tab)
@@ -19,18 +19,27 @@ public class Tela
                 else
                 {
                   ImprimirPeca(tab.peca(i,j));
+                  Console.Write(" ");
                 }
             }
-            System.Console.WriteLine();
+            System.Console.WriteLine( );
         }
         Console.WriteLine("  a b c d e f g h");
+    }
+
+    public static XadezPosicao LerPosicaoxadrez()
+    {
+        string s = Console.ReadLine();
+        char coluna =  s[0];
+        int linha  = int.Parse(s[1]+ "");
+        return new XadezPosicao(coluna, linha);
     }
 
     public static void ImprimirPeca(Peca peca)
     {
         if (peca.cor == Cor.Branco)
         {
-            Console.WriteLine(peca);
+            Console.Write(peca);
         }
         else
         {
