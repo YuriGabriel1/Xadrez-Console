@@ -10,7 +10,7 @@ public class PartidaDeXadrez
     private HashSet<Peca> pecas;
     private HashSet<Peca> capturadas;
     public bool xeque { get; private set; }
-    public   Peca vulneravelEnPassant{get;private set;}
+    public Peca vulneravelEnPassant { get; private set; }
 
     public PartidaDeXadrez()
     {
@@ -52,6 +52,24 @@ public class PartidaDeXadrez
             T.IncrementraQteMovimentos();
             tab.ColocarPeca(T, destinoT);
         }
+        //JogadaEspecial en passant
+        if (p is Peao)
+        {
+            if (origem.Coluna != destino.Coluna && peCapturada == null)
+            {
+                Posicao posP;
+                if (p.cor == Cor.Branco)
+                {
+                    posP = new Posicao(destino.Linha + 1, destino.Coluna);
+                }
+                else
+                {
+                    posP = new Posicao(destino.Linha - 1, destino.Coluna);
+                }
+                peCapturada = tab.RetirarPeca(posP);
+                capturadas.Add(peCapturada);
+            }
+        }
 
         return peCapturada;
     }
@@ -83,6 +101,24 @@ public class PartidaDeXadrez
             Peca T = tab.RetirarPeca(destinoT);
             T.decrementraQteMovimentos();
             tab.ColocarPeca(T, origemT);
+        }
+        //JogadaEspecial en passant
+        if (p is Peao)
+        {
+            if (origem.Coluna != destino.Coluna && pecaCapturada == vulneravelEnPassant)
+            {
+                Peca peao = tab.RetirarPeca(destino);
+                Posicao posP;
+                if (p.cor == Cor.Branco)
+                {
+                    posP = new Posicao(3, destino.Coluna);
+                }
+                else
+                {
+                    posP = new Posicao(4, destino.Coluna);
+                }
+                tab.ColocarPeca(peao,posP);
+            }
         }
     }
 
@@ -117,7 +153,7 @@ public class PartidaDeXadrez
         Peca p = tab.peca(destino);
 
         //jogadaEspecial en passant
-        if(p is Peao && (destino.Linha == origem.Linha - 2 || destino.Linha == origem.Linha + 2))
+        if (p is Peao && (destino.Linha == origem.Linha - 2 || destino.Linha == origem.Linha + 2))
         {
             vulneravelEnPassant = p;
         }
