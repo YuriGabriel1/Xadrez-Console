@@ -12,10 +12,18 @@ public class Tela
         imprimirpecasCapturadas(partida);
         Console.WriteLine();
         Console.WriteLine("Turno: " + partida.turno);
-        Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
-        if (partida.xeque)
+        if (!partida.terminada)
         {
-            System.Console.WriteLine("XEQUE!");
+            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+            if (partida.xeque)
+            {
+                System.Console.WriteLine("XEQUE!");
+            }
+        }
+        else
+        {
+            System.Console.WriteLine("XEQUEMATE!");
+            System.Console.WriteLine("Vencedor: "+partida.jogadorAtual);
         }
     }
 
