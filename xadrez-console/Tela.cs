@@ -13,6 +13,10 @@ public class Tela
         Console.WriteLine();
         Console.WriteLine("Turno: " + partida.turno);
         Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+        if (partida.xeque)
+        {
+            System.Console.WriteLine("XEQUE!");
+        }
     }
 
     public static void imprimirpecasCapturadas(PartidaDeXadrez partida)
